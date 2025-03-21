@@ -1,4 +1,4 @@
-name: Call Shared Workflow
+name: Deploy
 
 on:
   push:
@@ -6,9 +6,9 @@ on:
       - main
 
 jobs:
-  call-workflow:
-    uses: enricay/workflow-templates/.github/workflows/deploy.yml@main
+  deploy:
+    uses: enricay/github-actions-templates/.github/workflows/deploy-template.yml@main
     with:
-      environment: production
+      environment: "production"
     secrets:
       GH_TOKEN: ${{ secrets.GH_TOKEN }}
